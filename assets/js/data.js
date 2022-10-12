@@ -165,7 +165,7 @@ const data = {
       _id: 13,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Cine3.jpg",
       name: "Batman",
-      date: "2021-3-11",
+      date: "2021-03-11",
       description: "Come see Batman fight crime in Gotham City.",
       category: "Cinema",
       place: "Room D1",

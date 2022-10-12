@@ -9,49 +9,70 @@
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <figure class="header-container__logo">
-          <img src="../assets/img/logo.png" alt="Logotype image" />
-        </figure>
-        <nav class="header-container__nav">
+    <header class="header header--upcoming-past">
+      <nav class="nav">
+        <a href="../index.html" class="nav__side nav__side--left">
+          <figure>
+            <img src="../assets/img/logo.png" alt="Logo image" />
+          </figure>
+        </a>
+        <div class="nav__content">
           <a href="../index.html">Home</a>
-          <a href="./upcoming-events.html">Upcoming Events</a>
-          <a href="#" class="header-container__nav-active">Past Events</a>
-          <a href="./contact.html">Contact</a>
-          <a href="./stats.html">Stats</a>
-        </nav>
-      </div>
-      <h1 class="header-title">Past Events</h1>
+          <a href="../html/upcoming-events.html">Upcoming Events</a>
+          <a href="#">Past Events</a>
+          <a href="../html/contact.html">Contact</a>
+          <a href="../html/stats.html">Stats</a>
+        </div>
+        <div class="nav__side nav__side--right">
+          <label for="search" class="search">
+            <figure>
+              <img src="../assets/img/icon-search.png" alt="" />
+            </figure>
+            <input type="search" id="search" class="search__input" />
+          </label>
+        </div>
+      </nav>
     </header>
     <main class="main">
-      <form class="main-nav">
-        <div class="main-nav__checkbox">
-          <label>
-            <input type="checkbox" name="position" value="Category1" />
-            Category1
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category2" />
-            Category2
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category3" />
-            Category3
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category4" />
-            Category4
-          </label>
-        </div>
-        <div class="main-nav__search">
-          <input type="text" placeholder="Search.." name="search" class="main-nav__search-text"/>
-          <input type="image" src="../assets/img/search.png" class="main-nav__search-icon"></input>
-        </div>
-      </form>
-      <div class="main-content" id="main-content">
-
+      <div class="presentation presentation--upcoming-past" id="presentation">
+        
       </div>
+      <section>
+        <form class="main-nav">
+          <div class="main-nav__checkbox">
+            <label>
+              <input type="checkbox" name="position" value="Category1" />
+              Category1
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category2" />
+              Category2
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category3" />
+              Category3
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category4" />
+              Category4
+            </label>
+          </div>
+          <div class="main-nav__search">
+            <input
+              type="text"
+              placeholder="Search.."
+              name="search"
+              class="main-nav__search-text"
+            />
+            <input
+              type="image"
+              src="../assets/img/search.png"
+              class="main-nav__search-icon"
+            />
+          </div>
+        </form>
+        <div class="main-content" id="main-content"></div>
+      </section>
     </main>
     <footer class="footer">
       <figure class="footer__images">
