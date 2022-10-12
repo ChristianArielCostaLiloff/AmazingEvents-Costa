@@ -10,99 +10,86 @@
   </head>
   <body>
     <header class="header">
-      <div class="header-container">
-        <figure class="header-container__logo">
-          <img src="./assets/img/logo.png" alt="Logotype image" />
-        </figure>
-        <nav class="header-container__nav">
-          <a href="#" class="header-container__nav-active">Home</a>
+      <nav class="nav">
+        <a href="#" class="nav__side nav__side--left">
+          <figure>
+            <img src="./assets/img/logo.png" alt="Logo image" />
+          </figure>
+        </a>
+        <div class="nav__content">
+          <a href="#">Home</a>
           <a href="./html/upcoming-events.html">Upcoming Events</a>
           <a href="./html/past-events.html">Past Events</a>
           <a href="./html/contact.html">Contact</a>
           <a href="./html/stats.html">Stats</a>
-        </nav>
-      </div>
-      <h1 class="header-title">Home</h1>
+        </div>
+        <div class="nav__side nav__side--right">
+          <label for="search" class="search">
+            <figure>
+              <img src="./assets/img/icon-search.png" alt="" />
+            </figure>
+            <input type="search" id="search" class="search__input" />
+          </label>
+        </div>
+      </nav>
     </header>
     <main class="main">
-      <form class="main-nav">
-        <div class="main-nav__checkbox">
-          <label>
-            <input type="checkbox" name="position" value="Category1" />
-            Category1
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category2" />
-            Category2
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category3" />
-            Category3
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category4" />
-            Category4
-          </label>
-        </div>
-        <div class="main-nav__search">
-          <input type="text" placeholder="Search.." name="search" class="main-nav__search-text"/>
-          <input type="image" src="./assets/img/search.png" class="main-nav__search-icon"></input>
-        </div>
-      </form>
-      <div class="main-content">
-        <article class="card">
-          <figure>
-            <img src="./assets/img/cinema.jpg" alt="Cinema image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
-        <article class="card">
-          <figure>
-            <img src="./assets/img/marathon.jpg" alt="Marathon image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
-        <article class="card">
-          <figure>
-            <img src="./assets/img/museum.jpg" alt="Museum image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
-        <article class="card">
-          <figure>
-            <img src="./assets/img/music.jpg" alt="Concert image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
+      <div class="presentation">
+        <section class="presentation__content">
+          <h2>Amazing Events</h2>
+          <p>
+            Amazing Events love events, we are passionate about them and take
+            each one personally. Our passion and dedication, combined with the
+            experience of our in-house event specialists enables us to exceed
+            client expectations
+          </p>
+          <ul>
+            <li>Outdoor Events</li>
+            <li>Indoor Events</li>
+            <li>On the water</li>
+            <li>Virtual Events</li>
+          </ul>
+        </section>
+        <figure class="presentation__picture">
+          <img src="./assets/img/main-photo.jpeg" alt="Event image" />
+        </figure>
       </div>
+      <section>
+        <form class="main-nav">
+          <div class="main-nav__checkbox">
+            <label>
+              <input type="checkbox" name="position" value="Category1" />
+              Category1
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category2" />
+              Category2
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category3" />
+              Category3
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category4" />
+              Category4
+            </label>
+          </div>
+          <div class="main-nav__search">
+            <input
+              type="text"
+              placeholder="Search.."
+              name="search"
+              class="main-nav__search-text"
+            />
+            <input
+              type="image"
+              src="./assets/img/search.png"
+              class="main-nav__search-icon"
+            />
+          </div>
+        </form>
+        <div class="main-content" id="main-content"></div>
+      </section>
     </main>
     <footer class="footer">
       <figure class="footer__images">
@@ -112,5 +99,7 @@
       </figure>
       <p>Cohort 35</p>
     </footer>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>

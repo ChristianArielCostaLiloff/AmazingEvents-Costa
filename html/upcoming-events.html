@@ -9,139 +9,70 @@
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <figure class="header-container__logo">
-          <img src="../assets/img/logo.png" alt="Logotype image" />
-        </figure>
-        <nav class="header-container__nav">
+    <header class="header header--upcoming-past">
+      <nav class="nav">
+        <a href="../index.html" class="nav__side nav__side--left">
+          <figure>
+            <img src="../assets/img/logo.png" alt="Logo image" />
+          </figure>
+        </a>
+        <div class="nav__content">
           <a href="../index.html">Home</a>
-          <a href="#" class="header-container__nav-active">Upcoming Events</a>
-          <a href="./past-events.html">Past Events</a>
-          <a href="./contact.html">Contact</a>
-          <a href="./stats.html">Stats</a>
-        </nav>
-      </div>
-      <h1 class="header-title">Past Events</h1>
+          <a href="#">Upcoming Events</a>
+          <a href="../html/past-events.html">Past Events</a>
+          <a href="../html/contact.html">Contact</a>
+          <a href="../html/stats.html">Stats</a>
+        </div>
+        <div class="nav__side nav__side--right">
+          <label for="search" class="search">
+            <figure>
+              <img src="../assets/img/icon-search.png" alt="" />
+            </figure>
+            <input type="search" id="search" class="search__input" />
+          </label>
+        </div>
+      </nav>
     </header>
     <main class="main">
-      <form class="main-nav">
-        <div class="main-nav__checkbox">
-          <label>
-            <input type="checkbox" name="position" value="Category1" />
-            Category1
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category2" />
-            Category2
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category3" />
-            Category3
-          </label>
-          <label>
-            <input type="checkbox" name="position" value="Category4" />
-            Category4
-          </label>
-        </div>
-        <div class="main-nav__search">
-          <input type="text" placeholder="Search.." name="search" class="main-nav__search-text"/>
-          <input type="image" src="../assets/img/search.png" class="main-nav__search-icon"></input>
-        </div>
-      </form>
-      <div class="main-content">
-        <article class="card">
-          <figure>
-            <img src="../assets/img/cinema.jpg" alt="Cinema image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
-        <article class="card">
-          <figure>
-            <img src="../assets/img/marathon.jpg" alt="Marathon image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
-        <article class="card">
-          <figure>
-            <img src="../assets/img/museum.jpg" alt="Museum image" />
-          </figure>
-          <div class="card__title">
-            <h4>Title1</h4>
-            <p>Descriptive text</p>
-          </div>
-          <div class="card__price">
-            <p>Price: $0000</p>
-            <a href="#">Show more</a>
-          </div>
-        </article>
-        <article class="card">
-            <figure>
-              <img src="../assets/img/music.jpg" alt="Concert image" />
-            </figure>
-            <div class="card__title">
-              <h4>Title1</h4>
-              <p>Descriptive text</p>
-            </div>
-            <div class="card__price">
-              <p>Price: $0000</p>
-              <a href="#">Show more</a>
-            </div>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="../assets/img/costumes.jpg" alt="Costumes image" />
-            </figure>
-            <div class="card__title">
-              <h4>Title1</h4>
-              <p>Descriptive text</p>
-            </div>
-            <div class="card__price">
-              <p>Price: $0000</p>
-              <a href="#">Show more</a>
-            </div>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="../assets/img/food.jpg" alt="Food image" />
-            </figure>
-            <div class="card__title">
-              <h4>Title1</h4>
-              <p>Descriptive text</p>
-            </div>
-            <div class="card__price">
-              <p>Price: $0000</p>
-              <a href="#">Show more</a>
-            </div>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="../assets/img/books.jpg" alt="Books image" />
-            </figure>
-            <div class="card__title">
-              <h4>Title1</h4>
-              <p>Descriptive text</p>
-            </div>
-            <div class="card__price">
-              <p>Price: $0000</p>
-              <a href="#">Show more</a>
-            </div>
-          </article>
+      <div class="presentation presentation--upcoming-past" id="presentation">
+        
       </div>
+      <section>
+        <form class="main-nav">
+          <div class="main-nav__checkbox">
+            <label>
+              <input type="checkbox" name="position" value="Category1" />
+              Category1
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category2" />
+              Category2
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category3" />
+              Category3
+            </label>
+            <label>
+              <input type="checkbox" name="position" value="Category4" />
+              Category4
+            </label>
+          </div>
+          <div class="main-nav__search">
+            <input
+              type="text"
+              placeholder="Search.."
+              name="search"
+              class="main-nav__search-text"
+            />
+            <input
+              type="image"
+              src="../assets/img/search.png"
+              class="main-nav__search-icon"
+            />
+          </div>
+        </form>
+        <div class="main-content" id="main-content"></div>
+      </section>
     </main>
     <footer class="footer">
       <figure class="footer__images">
@@ -151,5 +82,7 @@
       </figure>
       <p>Cohort 35</p>
     </footer>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/upcoming-events.js"></script>
   </body>
 </html>
