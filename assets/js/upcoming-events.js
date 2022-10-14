@@ -30,7 +30,7 @@ function presentationCard(event) {
             <p>${event.assistance || event.estimate} / ${event.capacity}</p>
             <p>Price: $${event.price}</p>
           </div>
-          <div class="presentation__click card__price">
+          <div class="card__price presentation__click">
             <a href="#" class="card__price-link">Show more</a>
           </div>
         </section>
