@@ -53,6 +53,7 @@ html {
 }
 .nav__side--right {
   justify-content: flex-start;
+  padding-right: 20px;
 }
 .nav__side > figure {
   height: 40px;
@@ -66,54 +67,43 @@ html {
   object-fit: cover;
 }
 .search {
+  width: 100%;
   display: flex;
-  gap: 2px;
-  height: 25px;
-  width: 25px;
-  overflow: hidden;
-  transition: 2s;
-  transition-timing-function: ease;
 }
-.search:hover {
-  width: 210px;
-}
-.search:hover .search__input {
-  display: block;
-  width: 180px;
-}
-/* .search:focus .search__input {
-  display: block;
-  width: 180px;
-} */
-.search > figure {
-  height: 25px;
-  width: 25px;
-}
-.search > figure > img {
-  height: 100%;
-  object-fit: fill;
-}
-.search__input {
-  display: none;
-  border: none;
+.searchTerm {
+  width: 100%;
+  border: 3px solid #d90368;
+  border-right: none;
+  padding: 5px;
+  height: 28px;
+  border-radius: 5px 0 0 5px;
   outline: none;
-  font-size: 14px;
-  border-radius: 15px;
-  padding: 2px;
-  text-indent: 5px;
+  color: #9dbfaf;
 }
-/* .search__input:focus .search {
-  width: 210px;
-} */
+.searchTerm:focus {
+  color: #00b4cc;
+}
+.searchButton {
+  width: 40px;
+  height: 28px;
+  border: 1px solid #d90368;
+  background: #d90368;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
 .nav__content {
   width: 100%;
+  min-width: 650px;
   max-width: 1000px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 .nav__content a {
-  padding: 10px 20px;
+  padding: 5px 20px;
   color: #d90368;
   text-decoration: none;
   font-size: 18px;
@@ -140,7 +130,7 @@ html {
   height: 95vh;
   display: flex;
   background-image: url("../img/THE-COLOR.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .presentation--upcoming-past {
@@ -150,26 +140,26 @@ html {
   background-color: rgba(85, 85, 85, 0.35);
 }
 .presentation__content {
-  margin-top: 40px;
-  padding: 80px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
-  flex: 1;
-  font-size: 24px;
+  flex: 10;
+  gap: 50px;
+  font-size: 20px;
   text-shadow: 1px 1px 2px black;
 }
 .presentation__content--upcoming-past {
   padding: 10px;
 }
 .presentation__content h2 {
-  margin: 10px;
   color: #d90368;
   width: 100%;
   font-size: 70px;
-  text-indent: 100px;
+  padding-left: 100px;
 }
-.presentation__content--upcoming-past h2{
+.presentation__content--upcoming-past h2 {
   text-decoration: underline;
 }
 .presentation__content h3 {
@@ -178,13 +168,17 @@ html {
   font-size: 40px;
 }
 .presentation p {
-  margin: 35px 10px 0px 0px;
-  width: 100%;
-  font-size: 22px;
+  width: 90%;
+  min-height: 120px;
+  line-height: 1.7;
+}
+.presentation ul {
+  height: fit-content;
+  width: 80%;
 }
 .presentation li {
-  padding-top: 45px;
-  padding-left: 45px;
+  width: 100%;
+  padding: 15px 0px;
   text-indent: 10px;
   list-style-image: url("../img/list-icon.png");
   list-style-position: inside;
@@ -201,7 +195,9 @@ html {
   align-items: center;
 }
 .presentation__picture {
-  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex: 10;
   clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
 }
 .presentation__picture figure {
@@ -211,7 +207,7 @@ html {
 .presentation__picture img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 .presentation__picture--upcoming-past {
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
@@ -429,24 +425,21 @@ html {
   font-size: 30px;
   font-weight: 600;
 }
+@media only screen and (max-width: 1300px) {
+  .presentation__content {
+    font-size: 16px;
+  }
+  .presentation__content h2 {
+    padding-left: 50px;
+    font-size: 46px;
+  }
+}
 @media only screen and (max-width: 920px) {
   .header {
     height: fit-content;
   }
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 10px;
-  }
-  .header-container__nav {
-    width: 100%;
-    gap: 15px;
-    height: fit-content;
-  }
-  .header-container__nav a {
-    width: 100%;
+  .presentation__picture {
+    flex: 6;
   }
   .main-nav {
     flex-direction: column-reverse;
@@ -455,18 +448,12 @@ html {
     width: 100%;
   }
 }
+@media only screen and (max-width: 700px) {
+  .presentation__picture {
+    display: none;
+  }
+}
 @media only screen and (max-width: 600px) {
-  .header-container__logo {
-    margin: 0px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .header-container__nav {
-    flex-wrap: wrap;
-    padding-top: 20px;
-  }
   .main-nav__checkbox {
     flex-wrap: wrap;
     gap: 20px;

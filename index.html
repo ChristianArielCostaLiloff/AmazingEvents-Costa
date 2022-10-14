@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./assets/styles/style.css" />
     <title>Amazing Events</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png" />
+    <script
+      src="https://kit.fontawesome.com/1050bbb243.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -23,13 +27,15 @@
           <a href="./html/contact.html">Contact</a>
           <a href="./html/stats.html">Stats</a>
         </div>
-        <div class="nav__side nav__side--right">
-          <label for="search" class="search">
-            <figure>
-              <img src="./assets/img/icon-search.png" alt="" />
-            </figure>
-            <input type="search" id="search" class="search__input" />
-          </label>
+        <div class="nav__side nav__side--right search">
+          <input
+            type="text"
+            class="searchTerm"
+            placeholder="What are you looking for?"
+          />
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
       </nav>
     </header>
