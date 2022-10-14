@@ -26,9 +26,13 @@ html {
 /* HEADER */
 .header {
   background-color: rgb(30, 30, 30);
-  height: 5vh;
+  min-height: 5vh;
+  height: fit-content;
   width: 100%;
   scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header--upcoming-past {
   scroll-snap-align: none;
@@ -72,6 +76,7 @@ html {
 }
 .searchTerm {
   width: 100%;
+  max-width: 200px;
   border: 3px solid #d90368;
   border-right: none;
   padding: 5px;
@@ -84,7 +89,7 @@ html {
   color: #00b4cc;
 }
 .searchButton {
-  width: 40px;
+  width: 30px;
   height: 28px;
   border: 1px solid #d90368;
   background: #d90368;
@@ -96,7 +101,7 @@ html {
 }
 .nav__content {
   width: 100%;
-  min-width: 650px;
+  min-width: 620px;
   max-width: 1000px;
   display: flex;
   align-items: center;
@@ -113,6 +118,81 @@ html {
 }
 .nav__content a:hover {
   background-color: white;
+}
+/* BURGER */
+.hamburger-menu {
+  display: none;
+}
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #d90368;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.menu__item:hover {
+  background-color: #8b8b8b;
 }
 /* MAIN */
 /* index.html upcoming-events.html past-events.html */
@@ -212,6 +292,9 @@ html {
 .presentation__picture--upcoming-past {
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 }
+.main section {
+  width: 100%;
+}
 .main-nav {
   width: 100%;
   flex: 1;
@@ -220,15 +303,18 @@ html {
   justify-content: space-evenly;
 }
 .main-nav__checkbox {
-  flex: 6;
-  padding: 20px;
+  width: 60%;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   font-weight: 600;
 }
+.main-nav__checkbox > label {
+  min-width: 100px;
+}
 .main-nav__search {
-  flex: 4;
+  width: 40%;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -434,6 +520,28 @@ html {
     font-size: 46px;
   }
 }
+@media only screen and (max-width: 1000px) {
+  .header {
+    display: block;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  .nav__side {
+    width: fit-content;
+  }
+  .nav__content,
+  .nav__side--right {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hamburger-menu {
+    display: block;
+    width: 0px;
+    height: 0px;
+  }
+}
 @media only screen and (max-width: 920px) {
   .header {
     height: fit-content;
@@ -444,6 +552,7 @@ html {
   .main-nav {
     flex-direction: column-reverse;
   }
+  .main-nav__search,
   .main-nav__checkbox {
     width: 100%;
   }
@@ -456,10 +565,14 @@ html {
 @media only screen and (max-width: 600px) {
   .main-nav__checkbox {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 410px) {
+  .presentation__content h2 {
+    padding: 0px;
+    text-align: center;
+  }
   .footer {
     gap: 20px;
     padding: 20px;
