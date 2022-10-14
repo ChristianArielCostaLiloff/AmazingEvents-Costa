@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../assets/styles/style.css" />
     <title>Amazing Events</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
+    <script
+      src="https://kit.fontawesome.com/1050bbb243.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header header--upcoming-past">
@@ -23,78 +27,115 @@
           <a href="../html/contact.html">Contact</a>
           <a href="#">Stats</a>
         </div>
-        <div class="nav__side nav__side--right">
-          <label for="search" class="search">
-            <figure>
-              <img src="../assets/img/icon-search.png" alt="" />
-            </figure>
-            <input type="search" id="search" class="search__input" />
-          </label>
+        <div class="nav__side nav__side--right search">
+          <input type="text" class="searchTerm" placeholder="Search.." />
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
       </nav>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="../index.html">Home</a></li>
+          <li>
+            <a class="menu__item" href="#">Upcoming Events</a>
+          </li>
+          <li>
+            <a class="menu__item" href="../html/past-events.html">
+              Past Events
+            </a>
+          </li>
+          <li><a class="menu__item" href="../html/contact.html">Contact</a></li>
+          <li><a class="menu__item" href="../html/stats.html">Stats</a></li>
+        </ul>
+      </div>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+
+        <ul class="menu__box">
+          <li><a class="menu__item" href="../index.html">Home</a></li>
+          <li>
+            <a class="menu__item" href="#">Upcoming Events</a>
+          </li>
+          <li>
+            <a class="menu__item" href="../html/past-events.html">
+              Past Events
+            </a>
+          </li>
+          <li><a class="menu__item" href="../html/contact.html">Contact</a></li>
+          <li><a class="menu__item" href="../html/stats.html">Stats</a></li>
+        </ul>
+      </div>
     </header>
     <main class="main">
-        <table class="stats">
-            <tr>
-                <th colspan="3">Events statistics</th>
-            </tr>
-            <tr>
-                <td>Events with the highest percentage of attendance</td>
-                <td>Events with the lowest percentage of attendance</td>
-                <td>Event with larger capacity</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th colspan="3">Upcoming events statistics by category</th>
-            </tr>
-            <tr>
-                <td>Categories</td>
-                <td>Revenues</td>
-                <td>Percentage of attendance</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th colspan="3">Past Events statistic by category</th>
-            </tr>
-            <tr>
-                <td>Categories</td>
-                <td>Revenues</td>
-                <td>Percentage of attendance</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+      <table class="stats">
+        <tr>
+          <th colspan="3">Events statistics</th>
+        </tr>
+        <tr>
+          <td>Events with the highest percentage of attendance</td>
+          <td>Events with the lowest percentage of attendance</td>
+          <td>Event with larger capacity</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3">Upcoming events statistics by category</th>
+        </tr>
+        <tr>
+          <td>Categories</td>
+          <td>Revenues</td>
+          <td>Percentage of attendance</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="3">Past Events statistic by category</th>
+        </tr>
+        <tr>
+          <td>Categories</td>
+          <td>Revenues</td>
+          <td>Percentage of attendance</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </main>
     <footer class="footer">
       <figure class="footer__images">
