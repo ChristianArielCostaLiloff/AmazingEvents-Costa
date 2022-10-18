@@ -80,34 +80,38 @@
         <form class="main-nav">
           <div class="main-nav__checkbox">
             <label>
-              <input type="checkbox" name="position" value="Category1" />
-              Category1
+              <input type="checkbox" name="category" value="Food Fair" checked/>
+              Food Fair
             </label>
             <label>
-              <input type="checkbox" name="position" value="Category2" />
-              Category2
+              <input type="checkbox" name="category" value="Museum" checked/>
+              Museum
             </label>
             <label>
-              <input type="checkbox" name="position" value="Category3" />
-              Category3
+              <input type="checkbox" name="category" value="Costume Party" checked/>
+              Costume Party
             </label>
             <label>
-              <input type="checkbox" name="position" value="Category4" />
-              Category4
+              <input type="checkbox" name="category" value="Music Concert" checked/>
+              Music Concert
+            </label><label>
+              <input type="checkbox" name="category" value="Race" checked/>
+              Race
+            </label>
+            <label>
+              <input type="checkbox" name="category" value="Book Exchange" checked/>
+              Book Exchange
+            </label>
+            <label>
+              <input type="checkbox" name="category" value="Cinema" checked/>
+              Cinema
             </label>
           </div>
-          <div class="main-nav__search">
-            <input
-              type="text"
-              placeholder="Search.."
-              name="search"
-              class="main-nav__search-text"
-            />
-            <input
-              type="image"
-              src="./assets/img/search.png"
-              class="main-nav__search-icon"
-            />
+          <div class="nav__side nav__side--right search">
+            <input type="text" class="searchTerm" placeholder="Search.." id="card-search"/>
+            <button type="submit" class="searchButton">
+              <i class="fa fa-search"></i>
+            </button>
           </div>
         </form>
         <div class="main-content" id="main-content"></div>

@@ -1,7 +1,36 @@
 const container = document.getElementById("main-content");
+/* const category = document.querySelectorAll("input[name='category']"); */
+const navSearchCard = document.querySelector(".main-nav");
 
-for (let event of data.events) {
-  getCard(event);
+function getData() {
+  return data;
+}
+navSearchCard.addEventListener("input", function () {
+  let sortCardByCategory = Array.from(
+    document.querySelectorAll("input[name='category']:checked")
+  ).map((node) => node.value);
+
+  let sortCardByText = document
+    .getElementById("card-search")
+    .value.toString()
+    .toLowerCase();
+
+  let sortedCard = data.events.filter(function (event) {
+    return (
+      event.name.toLowerCase().includes(sortCardByText) &&
+      sortCardByCategory.includes(event.category) /* ||
+      (sortCardByText == null && sortCardByCategory.includes(event.category)) */
+    );
+  });
+
+  clearHtml(container);
+  sortedCard.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(getCard);
+});
+
+data.events.forEach(getCard);
+
+function clearHtml(domElement) {
+  domElement.innerHTML = "";
 }
 
 function getCard(event) {
