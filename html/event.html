@@ -7,35 +7,74 @@
     <link rel="stylesheet" href="../assets/styles/style.css" />
     <title>Amazing Events</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
+    <script
+      src="https://kit.fontawesome.com/1050bbb243.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header class="header">
-      <figure class="header-container__logo">
-        <img src="../assets/img/logo.png" alt="Logotype image" />
-      </figure>
-      <div class="header-container">
-        <nav class="header-container__nav">
+    <header class="header header--upcoming-past">
+      <nav class="nav">
+        <a href="../index.html" class="nav__side nav__side--left">
+          <figure>
+            <img src="../assets/img/logo.png" alt="Logo image" />
+          </figure>
+        </a>
+        <div class="nav__content">
           <a href="../index.html">Home</a>
-          <a href="./html/upcoming-events.html">Upcoming Events</a>
-          <a href="./html/past-events.html">Past Events</a>
-          <a href="./html/contact.html">Contact</a>
-          <a href="#" class="header-container__nav-active">Stats</a>
-        </nav>
-        <h1 class="header-title">Home</h1>
+          <a href="../html/upcoming-events.html">Upcoming Events</a>
+          <a href="../html/past-events.html">Past Events</a>
+          <a href="../html/contact.html">Contact</a>
+          <a href="../html/stats.html">Stats</a>
+        </div>
+        <div class="nav__side nav__side--right search">
+          <input type="text" class="searchTerm" placeholder="Search.." />
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="../index.html">Home</a></li>
+          <li>
+            <a class="menu__item" href="#">Upcoming Events</a>
+          </li>
+          <li>
+            <a class="menu__item" href="../html/past-events.html">
+              Past Events
+            </a>
+          </li>
+          <li><a class="menu__item" href="../html/contact.html">Contact</a></li>
+          <li><a class="menu__item" href="../html/stats.html">Stats</a></li>
+        </ul>
+      </div>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="../index.html">Home</a></li>
+          <li>
+            <a class="menu__item" href="#">Upcoming Events</a>
+          </li>
+          <li>
+            <a class="menu__item" href="../html/past-events.html">
+              Past Events
+            </a>
+          </li>
+          <li><a class="menu__item" href="../html/contact.html">Contact</a></li>
+          <li><a class="menu__item" href="../html/stats.html">Stats</a></li>
+        </ul>
       </div>
     </header>
-    <main class="main">
-      <article class="event">
-        <figure>
-          <img src="../assets/img/books.jpg" alt="Books image" />
-        </figure>
-        <div>
-          <h2>Title</h2>
-          <p>Description</p>
-          <p>Description</p>
-          <p>Description</p>
-        </div>
-      </article>
+    <main class="main" id="container-details">
+      
     </main>
     <footer class="footer">
       <figure class="footer__images">
@@ -45,5 +84,7 @@
       </figure>
       <p>Cohort 35</p>
     </footer>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/event.js"></script>
   </body>
 </html>

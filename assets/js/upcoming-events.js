@@ -1,20 +1,45 @@
 const container = document.getElementById("main-content");
 const presentation = document.getElementById("presentation");
 
-/* Definimos un nuevo array con los eventos futuros */
+const navSearchCard = document.querySelector(".main-nav");
 
-/* let futureEvents = data.events.filter(futureEvent); */
-/* function futureEvent(event) {
-  return data.currentDate < event.date;
-} */
+navSearchCard.addEventListener("input", function () {
+  let sortCardByCategory = Array.from(
+    document.querySelectorAll("input[name='category']:checked")
+  ).map((node) => node.value);
+
+  let sortCardByText = document
+    .getElementById("search-card")
+    .value.toLowerCase();
+
+  let sortedCard = getData().events.filter(
+    (event) =>
+      event.name.toLowerCase().includes(sortCardByText) &&
+      sortCardByCategory.includes(event.category) &&
+      getData().currentDate < event.date
+  );
+
+  clearHtml(container);
+  sortedCard.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(createCard);
+
+  if (sortedCard.length < 1) {
+    container.innerHTML='<h2>No elements to display</h2>'
+  }
+});
 
 let futureEvents = data.events.filter((event) => data.currentDate < event.date);
 
-/* Los ordenamos segun la fecha */
-/* Usamos la funcion getCard por cada elemento en el nuevo array */
 futureEvents.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(createCard);
 
 presentationCard(futureEvents[0]);
+
+function getData() {
+  return data;
+}
+
+function clearHtml(domElement) {
+  domElement.innerHTML = "";
+}
 
 function presentationCard(event) {
   presentation.innerHTML = `
@@ -31,7 +56,7 @@ function presentationCard(event) {
             <p>Price: $${event.price}</p>
           </div>
           <div class="card__price presentation__click">
-            <a href="#" class="card__price-link">Show more</a>
+            <a href="../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
           </div>
         </section>
         <figure
@@ -52,7 +77,7 @@ function createCard(event) {
             <p>${event.description}</p>
           </div>
           <div class="card__price">
-              <a href="" class="card__price-link">Show more</a>
+              <a href="../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
               <p>$${event.price}</p>
           </div>
         </article>

@@ -57,6 +57,7 @@ html {
   justify-content: flex-end;
 }
 .nav__side--right {
+  display: flex;
   justify-content: flex-start;
   padding-right: 20px;
 }
@@ -73,7 +74,10 @@ html {
 }
 .search {
   width: 100%;
-  display: flex;
+}
+/* Global search - hidden */
+.search input, .search button{
+  display: none;
 }
 .searchTerm {
   width: 100%;
@@ -298,8 +302,10 @@ html {
 .main-info {
   width: 100%;
   height: 100%;
+  min-height: 500px;
 }
 .main-nav {
+  padding-top: 10px;
   min-height: fit-content;
   width: 100%;
   flex: 1;
@@ -308,7 +314,7 @@ html {
   justify-content: space-evenly;
 }
 .main-nav__checkbox {
-  width: 60%;
+  width: 80%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -329,6 +335,13 @@ html {
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 30px;
+}
+.card-search {
+  width: 20%;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card {
   display: flex;
@@ -458,20 +471,32 @@ html {
   border-radius: 10px;
 }
 .event figure img {
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
-.event div {
+.details {
+  padding: 20px;
   height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 40px;
+  justify-content: space-between;
+  font-size: 28px;
   border: solid black 2px;
 }
-.event div h2 {
+.details div{
+  width: 100%;
+}
+.event h2 {
   font-size: 60px;
+}
+.details-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 /* FOOTER */
 .footer {
@@ -522,8 +547,6 @@ html {
   .nav__content,
   .nav__side--right {
     display: none;
-    flex-direction: column;
-    gap: 10px;
   }
   .hamburger-menu {
     display: block;
@@ -545,6 +568,9 @@ html {
   .main-nav__checkbox {
     width: 100%;
   }
+  .card-search {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 700px) {
   .presentation--upcoming-past {
@@ -558,11 +584,6 @@ html {
   }
   .presentation__picture {
     display: none;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .main-nav__checkbox {
-    gap: 30px;
   }
 }
 @media only screen and (max-width: 410px) {
