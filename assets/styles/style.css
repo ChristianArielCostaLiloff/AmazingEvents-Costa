@@ -454,7 +454,8 @@ html {
 /* event.html */
 .event {
   background-color: #ff8772;
-  height: 50vh;
+  height: 400px;
+  min-height: fit-content;
   width: 80vw;
   display: flex;
   align-items: center;
@@ -535,6 +536,9 @@ html {
     padding-left: 50px;
     font-size: 46px;
   }
+  .event h2{
+    font-size: 50px;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .header {
@@ -555,6 +559,13 @@ html {
     width: 0px;
     height: 0px;
   }
+  .details-info{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .details-info p{
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 920px) {
   .header {
@@ -573,6 +584,13 @@ html {
   .card-search {
     width: 100%;
   }
+  .event h2{
+    font-size: 35px;
+  }
+  .details{
+    
+    font-size: 22px;
+  }
 }
 @media only screen and (max-width: 700px) {
   .presentation--upcoming-past {
@@ -586,6 +604,24 @@ html {
   }
   .presentation__picture {
     display: none;
+  }
+  .event{
+    flex-direction: column;
+    height: fit-content;
+  }
+  .event h2{
+    font-size: 30px;
+  }
+  .details{
+    width: 100%;
+    font-size: 18px;
+  }
+  .event figure{
+    height: 200px;
+    width: 100%;
+  }
+  .event figure img{
+    width: 550px;
   }
 }
 @media only screen and (max-width: 410px) {
