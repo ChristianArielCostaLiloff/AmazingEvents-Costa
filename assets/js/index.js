@@ -1,10 +1,42 @@
 const container = document.getElementById("main-content");
+const navSearchCard = document.querySelector(".main-nav");
 
-for (let event of data.events) {
-  getCard(event);
+getData().events.forEach(createCard);
+
+//Event
+navSearchCard.addEventListener("input", function () {
+  let sortCardByCategory = Array.from(
+    document.querySelectorAll("input[name='category']:checked")
+  ).map((node) => node.value);
+
+  let sortCardByText = document
+    .getElementById("search-card")
+    .value.toLowerCase();
+
+  let sortedCard = getData().events.filter(
+    (event) =>
+      event.name.toLowerCase().includes(sortCardByText) &&
+      sortCardByCategory.includes(event.category)
+  );
+
+  clearHtml(container);
+  sortedCard.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(createCard);
+
+  if (sortedCard.length < 1 || sortCardByCategory.length < 1) {
+    container.innerHTML = "<h2>No elements to display</h2>";
+  }
+});
+
+//Functions
+function getData() {
+  return data;
 }
 
-function getCard(event) {
+function clearHtml(domElement) {
+  domElement.innerHTML = "";
+}
+
+function createCard(event) {
   container.innerHTML += `
   <article class="card">
           <div class="card__content">
@@ -15,7 +47,7 @@ function getCard(event) {
             <p>${event.description}</p>
           </div>
           <div class="card__price">
-              <a href="" class="card__price-link">Show more</a>
+              <a href="../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
               <p>$${event.price}</p>
           </div>
         </article>
