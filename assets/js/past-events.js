@@ -2,6 +2,13 @@ const container = document.getElementById("main-content");
 
 const navSearchCard = document.querySelector(".main-nav");
 
+let pastEvents = data.events.filter((event) => event.date < data.currentDate);
+
+pastEvents.sort((a, b) => (a.date < b.date ? 1 : -1)).forEach(createCard);
+
+presentationCard(pastEvents[0]);
+
+//Event
 navSearchCard.addEventListener("input", function () {
   let sortCardByCategory = Array.from(
     document.querySelectorAll("input[name='category']:checked")
@@ -26,12 +33,7 @@ navSearchCard.addEventListener("input", function () {
   }
 });
 
-let pastEvents = data.events.filter((event) => event.date < data.currentDate);
-
-pastEvents.sort((a, b) => (a.date < b.date ? 1 : -1)).forEach(createCard);
-
-presentationCard(pastEvents[0]);
-
+//Functions
 function getData() {
   return data;
 }

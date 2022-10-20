@@ -3,6 +3,13 @@ const presentation = document.getElementById("presentation");
 
 const navSearchCard = document.querySelector(".main-nav");
 
+let futureEvents = data.events.filter((event) => data.currentDate < event.date);
+
+futureEvents.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(createCard);
+
+presentationCard(futureEvents[0]);
+
+//Event
 navSearchCard.addEventListener("input", function () {
   let sortCardByCategory = Array.from(
     document.querySelectorAll("input[name='category']:checked")
@@ -27,12 +34,7 @@ navSearchCard.addEventListener("input", function () {
   }
 });
 
-let futureEvents = data.events.filter((event) => data.currentDate < event.date);
-
-futureEvents.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(createCard);
-
-presentationCard(futureEvents[0]);
-
+//Functions
 function getData() {
   return data;
 }

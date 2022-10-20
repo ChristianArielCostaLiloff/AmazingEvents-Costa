@@ -77,7 +77,7 @@ html {
 }
 /* Global search - hidden */
 .search input, .search button{
-  display: none;
+  display: block;
 }
 .searchTerm {
   width: 100%;

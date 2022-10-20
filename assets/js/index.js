@@ -1,6 +1,9 @@
 const container = document.getElementById("main-content");
 const navSearchCard = document.querySelector(".main-nav");
 
+getData().events.forEach(createCard);
+
+//Event
 navSearchCard.addEventListener("input", function () {
   let sortCardByCategory = Array.from(
     document.querySelectorAll("input[name='category']:checked")
@@ -24,8 +27,7 @@ navSearchCard.addEventListener("input", function () {
   }
 });
 
-getData().events.forEach(createCard);
-
+//Functions
 function getData() {
   return data;
 }
