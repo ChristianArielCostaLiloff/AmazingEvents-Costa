@@ -30,11 +30,12 @@ navSearchCard.addEventListener("input", function () {
   sortedCard.sort((a, b) => (a.date > b.date ? 1 : -1)).forEach(createCard);
 
   if (sortedCard.length < 1) {
-    container.innerHTML='<h2>No elements to display</h2>'
+    container.innerHTML = "<h2>No elements to display</h2>";
   }
 });
 
 //Functions
+
 function getData() {
   return data;
 }
@@ -58,7 +59,9 @@ function presentationCard(event) {
             <p>Price: $${event.price}</p>
           </div>
           <div class="card__price presentation__click">
-            <a href="../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
+            <a href="../html/event.html?id=${
+              event._id
+            }" class="card__price-link">Show more</a>
           </div>
         </section>
         <figure
@@ -85,3 +88,16 @@ function createCard(event) {
         </article>
   `;
 }
+
+//Test
+let dataJson = dataApi();
+console.log(dataApi());
+
+async function dataApi() {
+  let response = await fetch("https://mind-hub.up.railway.app/espectaculares");
+  let data = await response.json();
+  //console.log(data);
+  return data
+}
+
+dataApi();
