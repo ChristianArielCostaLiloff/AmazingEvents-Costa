@@ -47,7 +47,7 @@ function createCard(event) {
             <p>${event.description}</p>
           </div>
           <div class="card__price">
-              <a href=".../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
+              <a href="./html/event.html?id=${event._id}" class="card__price-link">Show more</a>
               <p>$${event.price}</p>
           </div>
         </article>
