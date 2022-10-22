@@ -1,7 +1,7 @@
 let container = document.getElementById("container-details");
 let id = location.search.slice(4);
 
-let eventDetail = getData().events.filter((event) => event._id == id);
+let eventDetail = getData().events.filter((event) => event.id == id);
 
 printEventInfo(eventDetail[0]);
 
