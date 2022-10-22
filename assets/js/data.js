@@ -1,4 +1,4 @@
-const data = {
+const dataLocal = {
   currentDate: "2022-01-01",
   events: [
     {

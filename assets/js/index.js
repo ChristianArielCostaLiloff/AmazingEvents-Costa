@@ -4,16 +4,25 @@ const navSearchCard = document.querySelector(".main-nav");
 
 showContent();
 
+//Functions
 //async funtion for data from API
 async function showContent() {
-  let data = await (
-    await fetch("https://mind-hub.up.railway.app/amazing?order=asc")
-  ).json();
-  data.events.forEach(createCard);
-  console.log(data);
+  let data;
+  try {
+    let dataRemote = await (
+      await fetch("https://mind-hub.up.railway.app/amazing?order=asc")
+    ).json();
+    data = dataRemote;
+  } catch (error) {
+    alert("Unable to import data from API showing local data");
+    data = dataLocal;
+  }
+  //Create categories
   let categories = data.events.map((event) => event.category);
   categories = new Set([...categories]);
   categories.forEach(createCheckbox);
+  //Show all cards in first instance
+  data.events.forEach(createCard);
 
   //Event
   navSearchCard.addEventListener("input", function () {
@@ -38,15 +47,8 @@ async function showContent() {
     if (sortedCard.length < 1) {
       container.innerHTML = "<h2>No elements to display</h2>";
     }
-    //If any sort show all
-    if (sortCardByText.length < 1 && sortCardByCategory.length < 1) {
-      data.events.forEach(createCard);
-    }
   });
 }
-
-//Functions
-
 function clearHtml(domElement) {
   domElement.innerHTML = "";
 }
