@@ -1,14 +1,21 @@
 let container = document.getElementById("container-details");
-let id = location.search.slice(4);
 
-let eventDetail = getData().events.filter((event) => event.id == id);
+showContent();
 
-printEventInfo(eventDetail[0]);
-
-function getData() {
-  return data;
+//Functions
+async function showContent() {
+  let data;
+  try {
+    data = await (
+      await fetch(
+        "https://mind-hub.up.railway.app/amazing/" + location.search.slice(4)
+      )
+    ).json();
+  } catch (error) {
+    alert("API error");
+  }
+  printEventInfo(data.event);
 }
-
 function printEventInfo(event) {
   container.innerHTML = `
     <article class="event">

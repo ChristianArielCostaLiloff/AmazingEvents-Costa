@@ -1,7 +1,7 @@
-const container = document.getElementById("main-content");
-const navCheckbox = document.getElementById("container-check");
 const presentation = document.getElementById("presentation");
+const navCheckbox = document.getElementById("container-check");
 const navSearchCard = document.querySelector(".main-nav");
+const container = document.getElementById("main-content");
 
 showContent();
 
@@ -107,7 +107,7 @@ function createCard(event) {
             <p>${event.description}</p>
           </div>
           <div class="card__price">
-              <a href="./html/event.html?id=${event._id}" class="card__price-link">Show more</a>
+              <a href="./event.html?id=${event.id}" class="card__price-link">Show more</a>
               <p>$${event.price}</p>
           </div>
         </article>
