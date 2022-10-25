@@ -17,6 +17,7 @@ async function showContent() {
   printEventInfo(data.event);
 }
 function printEventInfo(event) {
+  date = new Date(event.date).toDateString();
   container.innerHTML = `
     <article class="event">
       <figure>
@@ -29,12 +30,12 @@ function printEventInfo(event) {
         </div>
         <div>
           <div class="details-info">
-            <p>Date: ${event.date}</p>
+            <p>Date: ${date}</p>
             <p>Place: ${event.place}</p>
           </div>
           <div class="details-info">
             <p>
-              Joined:${event.assistance || event.estimate}/${event.capacity}
+              Joined: ${event.assistance || event.estimate}/${event.capacity}
             </p>
             <p>Price: $${event.price}</p>
           </div>
