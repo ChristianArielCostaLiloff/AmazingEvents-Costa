@@ -9,15 +9,13 @@ showContent();
 async function showContent() {
   let data;
   try {
-    let dataRemote = await (
+    data = await (
       await fetch(
-        "https://mind-hub.up.railway.app/amazing?time=past&order=desc"
+        "https://mh-amazing.herokuapp.com/amazing?time=past&order=desc"
       )
     ).json();
-    data = dataRemote;
   } catch (error) {
-    alert("Unable to import data from API showing local data");
-    data = dataLocal;
+    alert("Unable to import data from API");
   }
   //Create card for presentation
   presentationCard(data.events[0]);

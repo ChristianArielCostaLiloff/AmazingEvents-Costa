@@ -8,11 +8,11 @@ async function showContent() {
   try {
     data = await (
       await fetch(
-        "https://mind-hub.up.railway.app/amazing/" + location.search.slice(4)
+        "https://mh-amazing.herokuapp.com/amazing/" + location.search.slice(4)
       )
     ).json();
   } catch (error) {
-    alert("API error");
+    alert("Unable to import data from API");
   }
   printEventInfo(data.event);
 }

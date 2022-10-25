@@ -9,13 +9,11 @@ showContent();
 async function showContent() {
   let data;
   try {
-    let dataRemote = await (
-      await fetch("https://mind-hub.up.railway.app/amazing?order=asc")
+    data = await (
+      await fetch("https://mh-amazing.herokuapp.com/amazing?order=asc")
     ).json();
-    data = dataRemote;
   } catch (error) {
-    alert("Unable to import data from API showing local data");
-    data = dataLocal;
+    alert("Unable to import data from API");
   }
   //Create categories
   let categories = data.events.map((event) => event.category);
@@ -76,7 +74,7 @@ function createCard(event) {
             <p>${event.description}</p>
           </div>
           <div class="card__price">
-              <a href="./html/event.html?id=${event._id}" class="card__price-link">Show more</a>
+              <a href="./html/event.html?id=${event.id}" class="card__price-link">Show more</a>
               <p>$${event.price}</p>
           </div>
         </article>

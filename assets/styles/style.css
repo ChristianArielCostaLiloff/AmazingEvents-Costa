@@ -360,6 +360,8 @@ html {
   overflow: hidden;
 }
 .card figure img {
+  width: 100%;
+  min-height: 150px;
   object-fit: cover;
 }
 .card div {
