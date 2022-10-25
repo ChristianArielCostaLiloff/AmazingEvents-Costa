@@ -76,7 +76,8 @@ html {
   width: 100%;
 }
 /* Global search - hidden */
-.nav__side input, .nav__side button{
+.nav__side input,
+.nav__side button {
   display: none;
 }
 .searchTerm {
@@ -349,7 +350,7 @@ html {
   justify-content: space-between;
   flex-direction: column;
   width: 300px;
-  height: 380px;
+  height: 420px;
   box-shadow: rgba(0, 0, 0, 0.476) 1px 1px 5px;
   padding: 15px 10px;
 }
@@ -359,6 +360,8 @@ html {
   overflow: hidden;
 }
 .card figure img {
+  width: 100%;
+  min-height: 150px;
   object-fit: cover;
 }
 .card div {
@@ -486,7 +489,7 @@ html {
   font-size: 28px;
   border: solid black 2px;
 }
-.details div{
+.details div {
   width: 100%;
 }
 .event h2 {
@@ -536,7 +539,7 @@ html {
     padding-left: 50px;
     font-size: 46px;
   }
-  .event h2{
+  .event h2 {
     font-size: 50px;
   }
 }
@@ -559,11 +562,11 @@ html {
     width: 0px;
     height: 0px;
   }
-  .details-info{
+  .details-info {
     flex-direction: column;
     justify-content: flex-start;
   }
-  .details-info p{
+  .details-info p {
     width: 100%;
   }
 }
@@ -584,11 +587,10 @@ html {
   .card-search {
     width: 100%;
   }
-  .event h2{
+  .event h2 {
     font-size: 35px;
   }
-  .details{
-    
+  .details {
     font-size: 22px;
   }
 }
@@ -605,22 +607,22 @@ html {
   .presentation__picture {
     display: none;
   }
-  .event{
+  .event {
     flex-direction: column;
     height: fit-content;
   }
-  .event h2{
+  .event h2 {
     font-size: 30px;
   }
-  .details{
+  .details {
     width: 100%;
     font-size: 18px;
   }
-  .event figure{
+  .event figure {
     height: 200px;
     width: 100%;
   }
-  .event figure img{
+  .event figure img {
     width: 550px;
   }
 }

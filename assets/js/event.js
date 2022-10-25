@@ -1,15 +1,23 @@
 let container = document.getElementById("container-details");
-let id = location.search.slice(4);
 
-let eventDetail = getData().events.filter((event) => event._id == id);
+showContent();
 
-printEventInfo(eventDetail[0]);
-
-function getData() {
-  return data;
+//Functions
+async function showContent() {
+  let data;
+  try {
+    data = await (
+      await fetch(
+        "https://mh-amazing.herokuapp.com/amazing/" + location.search.slice(4)
+      )
+    ).json();
+  } catch (error) {
+    alert("Unable to import data from API");
+  }
+  printEventInfo(data.event);
 }
-
 function printEventInfo(event) {
+  date = new Date(event.date).toDateString();
   container.innerHTML = `
     <article class="event">
       <figure>
@@ -22,12 +30,12 @@ function printEventInfo(event) {
         </div>
         <div>
           <div class="details-info">
-            <p>Date: ${event.date}</p>
+            <p>Date: ${date}</p>
             <p>Place: ${event.place}</p>
           </div>
           <div class="details-info">
             <p>
-              Joined:${event.assistance || event.estimate}/${event.capacity}
+              Joined: ${event.assistance || event.estimate}/${event.capacity}
             </p>
             <p>Price: $${event.price}</p>
           </div>

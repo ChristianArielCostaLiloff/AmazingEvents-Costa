@@ -1,47 +1,71 @@
+const presentation = document.getElementById("presentation");
+const navCheckbox = document.getElementById("container-check");
+const navSearchCard = document.querySelector(".main-nav");
 const container = document.getElementById("main-content");
 
-const navSearchCard = document.querySelector(".main-nav");
-
-let pastEvents = data.events.filter((event) => event.date < data.currentDate);
-
-pastEvents.sort((a, b) => (a.date < b.date ? 1 : -1)).forEach(createCard);
-
-presentationCard(pastEvents[0]);
-
-//Event
-navSearchCard.addEventListener("input", function () {
-  let sortCardByCategory = Array.from(
-    document.querySelectorAll("input[name='category']:checked")
-  ).map((node) => node.value);
-
-  let sortCardByText = document
-    .getElementById("search-card")
-    .value.toLowerCase();
-
-  let sortedCard = getData().events.filter(
-    (event) =>
-      event.name.toLowerCase().includes(sortCardByText) &&
-      sortCardByCategory.includes(event.category) &&
-      getData().currentDate > event.date
-  );
-
-  clearHtml(container);
-  sortedCard.sort((a, b) => (a.date < b.date ? 1 : -1)).forEach(createCard);
-
-  if (sortedCard.length < 1) {
-    container.innerHTML='<h2>No elements to display</h2>'
-  }
-});
+showContent();
 
 //Functions
-function getData() {
-  return data;
-}
+async function showContent() {
+  let data;
+  try {
+    data = await (
+      await fetch(
+        "https://mh-amazing.herokuapp.com/amazing?time=past&order=desc"
+      )
+    ).json();
+  } catch (error) {
+    alert("Unable to import data from API");
+  }
+  //Create card for presentation
+  presentationCard(data.events[0]);
+  //Create categories
+  let categories = data.events.map((event) => event.category);
+  categories = new Set([...categories]);
+  categories.forEach(createCheckbox);
+  //Show all cards in first instance
+  data.events.forEach(createCard);
 
+  //Event
+  navSearchCard.addEventListener("input", function () {
+    let sortCardByCategory = Array.from(
+      document.querySelectorAll("input[name='category']:checked")
+    ).map((node) => node.value);
+
+    let sortCardByText = document
+      .getElementById("search-card")
+      .value.toLowerCase();
+
+    let sortedCard = data.events.filter(
+      (event) =>
+        event.name.toLowerCase().includes(sortCardByText) &&
+        (sortCardByCategory.includes(event.category) ||
+          sortCardByCategory.length < 1)
+    );
+
+    clearHtml(container);
+    sortedCard.forEach(createCard);
+    //0 matches
+    if (sortedCard.length < 1) {
+      container.innerHTML = "<h2>No elements to display</h2>";
+    }
+  });
+}
 function clearHtml(domElement) {
   domElement.innerHTML = "";
 }
-
+function createCheckbox(category) {
+  navCheckbox.innerHTML += `
+    <label>
+      <input
+        type="checkbox"
+        name="category"
+        value="${category}"
+      />
+      ${category}
+    </label>
+  `;
+}
 function presentationCard(event) {
   presentation.innerHTML = `
     <section
@@ -56,8 +80,10 @@ function presentationCard(event) {
             <p>${event.assistance || event.estimate} / ${event.capacity}</p>
             <p>Price: $${event.price}</p>
           </div>
-          <div class="presentation__click card__price">
-            <a href="../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
+          <div class="card__price presentation__click">
+            <a href="../html/event.html?id=${
+              event._id
+            }" class="card__price-link">Show more</a>
           </div>
         </section>
         <figure
@@ -68,17 +94,18 @@ function presentationCard(event) {
   `;
 }
 function createCard(event) {
+  date = new Date(event.date).toDateString();
   container.innerHTML += `
-    <article class="card">
+  <article class="card">
           <div class="card__content">
-            <h3>${event.date}</h3>
+            <h3>${date}</h3>
             <h5>${event.name}</h5>
             <figure><img src="${event.image}" alt="${event.name} picture"></figure>
             <hr>
             <p>${event.description}</p>
           </div>
           <div class="card__price">
-              <a href="../html/event.html?id=${event._id}" class="card__price-link">Show more</a>
+              <a href="./event.html?id=${event.id}" class="card__price-link">Show more</a>
               <p>$${event.price}</p>
           </div>
         </article>

@@ -42,7 +42,9 @@
         <ul class="menu__box">
           <li><a class="menu__item" href="../index.html">Home</a></li>
           <li>
-            <a class="menu__item" href="../html/upcoming-events.html">Upcoming Events</a>
+            <a class="menu__item" href="../html/upcoming-events.html"
+              >Upcoming Events</a
+            >
           </li>
           <li>
             <a class="menu__item" href="../html/past-events.html">
@@ -53,7 +55,6 @@
           <li><a class="menu__item" href="#">Stats</a></li>
         </ul>
       </div>
-    </header>
       <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
         <label class="menu__btn" for="menu__toggle">
@@ -81,15 +82,11 @@
           <th colspan="3">Events statistics</th>
         </tr>
         <tr>
-          <td>Events with the highest percentage of attendance</td>
-          <td>Events with the lowest percentage of attendance</td>
+          <td>Event with the highest percentage of attendance</td>
+          <td>Event with the lowest percentage of attendance</td>
           <td>Event with larger capacity</td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tr id="events-featured"></tr>
         <tr>
           <th colspan="3">Upcoming events statistics by category</th>
         </tr>
@@ -98,21 +95,8 @@
           <td>Revenues</td>
           <td>Percentage of attendance</td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tbody id="upcoming-stats">
+        </tbody>
         <tr>
           <th colspan="3">Past Events statistic by category</th>
         </tr>
@@ -121,21 +105,8 @@
           <td>Revenues</td>
           <td>Percentage of attendance</td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tbody id="past-stats">
+        </tbody>
       </table>
     </main>
     <footer class="footer">
@@ -146,5 +117,6 @@
       </figure>
       <p>Cohort 35</p>
     </footer>
+    <script src="../assets/js/stats.js"></script>
   </body>
 </html>
